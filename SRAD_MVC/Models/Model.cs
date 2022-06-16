@@ -5,11 +5,16 @@ using System.Web;
 
 namespace SRAD_MVC.Models
 {
+    public class UserType : BaseEntity
+    {
+        public string Type { get; set; }
+    }
     public class User : BaseEntity
     {
         public string UserName { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }        
+        public string Password { get; set; } 
+        public string UserType { get; set; }
     }
     public class Admin : BaseEntity
     {

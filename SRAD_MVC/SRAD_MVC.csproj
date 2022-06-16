@@ -141,6 +141,14 @@
     <Compile Include="Migrations\202206150749234_add grade model.Designer.cs">
       <DependentUpon>202206150749234_add grade model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206160638429_update user model+user type.cs" />
+    <Compile Include="Migrations\202206160638429_update user model+user type.Designer.cs">
+      <DependentUpon>202206160638429_update user model+user type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206160707440_update user model+user type-2.cs" />
+    <Compile Include="Migrations\202206160707440_update user model+user type-2.Designer.cs">
+      <DependentUpon>202206160707440_update user model+user type-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\MainContext.cs" />
@@ -188,6 +196,7 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,6 +220,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206150749234_add grade model.resx">
       <DependentUpon>202206150749234_add grade model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206160638429_update user model+user type.resx">
+      <DependentUpon>202206160638429_update user model+user type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206160707440_update user model+user type-2.resx">
+      <DependentUpon>202206160707440_update user model+user type-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

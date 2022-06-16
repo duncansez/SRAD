@@ -1,5 +1,6 @@
 namespace SRAD_MVC.Migrations
 {
+    using SRAD_MVC.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,13 @@ namespace SRAD_MVC.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            if (context.UserType.Count() == 0)
+            {
+                context.UserType.AddOrUpdate(x => x.Id,
+                new UserType() { Type = "Student" },
+                new UserType() { Type = "Admin" }          
+                );
+            }            
         }
     }
 }
