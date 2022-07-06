@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SRAD_MVC.Models.User>
+@{
+    ViewBag.Title = "Grade";
+}
+
+<h2>Grade</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserType)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserType)
+            </td>
+            <td>
+                @if (item.UserType == "Student")
+                {
+                    @Html.ActionLink("Manage", "Manage", new { id = item.Id })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+

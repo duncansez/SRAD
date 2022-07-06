@@ -25,7 +25,14 @@ namespace SRAD_MVC.Migrations
                 new UserType() { Type = "Student" },
                 new UserType() { Type = "Admin" }          
                 );
-            }            
+            }
+            if (context.Course.Count() == 0)
+            {
+                context.Course.AddOrUpdate(x => x.Id,
+                new Course() { Name = "SCSJ3323 - REKABENTUK DAN SENIBINA PERISIAN", Section = "S4", CreditHours = 3 },
+                new Course() { Name = "SCSJ2363 - PENGURUSAN PROJEK PERISIAN", Section = "S3", CreditHours = 3 }
+                );
+            }
         }
     }
 }

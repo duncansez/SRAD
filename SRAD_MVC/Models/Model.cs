@@ -35,8 +35,8 @@ namespace SRAD_MVC.Models
     }
     public class Grade : BaseEntity
     {
-        public Course Course { get; set; }
-        public User User { get; set; }
+        public string Course { get; set; }
+        public string User { get; set; }
         public double Score { get; set; }
     }
 }

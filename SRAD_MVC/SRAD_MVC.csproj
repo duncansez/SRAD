@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +149,10 @@
     <Compile Include="Migrations\202206160707440_update user model+user type-2.cs" />
     <Compile Include="Migrations\202206160707440_update user model+user type-2.Designer.cs">
       <DependentUpon>202206160707440_update user model+user type-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207061518168_Update database 06072022.cs" />
+    <Compile Include="Migrations\202207061518168_Update database 06072022.Designer.cs">
+      <DependentUpon>202207061518168_Update database 06072022.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -197,6 +202,9 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Manage.cshtml" />
+    <Content Include="Views\Grade\Index.cshtml" />
+    <Content Include="Views\Grade\Manage.cshtml" />
+    <Content Include="Views\Grade\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206160707440_update user model+user type-2.resx">
       <DependentUpon>202206160707440_update user model+user type-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207061518168_Update database 06072022.resx">
+      <DependentUpon>202207061518168_Update database 06072022.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
