@@ -1,0 +1,70 @@
+﻿@model SRAD_MVC.ViewModels.GradeViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div>
+            Create new grade for user : @ViewBag.UserName
+        </div>
+    </div>
+    <div class="form-group hidden">
+        @Html.LabelFor(model => model.User, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group hidden">
+        @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Course, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Course, new { htmlAttributes = new { @class = "control-label col-md-2" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Score, new { htmlAttributes = new { @class = "control-label col-md-2" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Grade, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Grade, new { htmlAttributes = new { @class = "control-label col-md-2" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Result, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Result, new { htmlAttributes = new { @class = "control-label col-md-2" } })
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

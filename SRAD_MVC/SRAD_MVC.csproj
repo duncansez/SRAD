@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -159,6 +162,8 @@
     <Compile Include="Models\MainContext.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtoType\Helper.cs" />
+    <Compile Include="ViewModels\GradeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -207,6 +212,7 @@
     <Content Include="Views\Grade\Create.cshtml" />
     <Content Include="Views\Grade\Edit.cshtml" />
     <Content Include="Views\Grade\Delete.cshtml" />
+    <Content Include="Views\Grade\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

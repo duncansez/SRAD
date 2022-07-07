@@ -1,4 +1,5 @@
 ﻿using SRAD_MVC.Models;
+using SRAD_MVC.ProtoType;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,7 +28,7 @@ namespace SRAD_MVC.Controllers
             User user = db.User.Find(id);
             var Model = db.Grade.Where(d => d.User == user.UserName).ToList();
             ViewBag.Id = id;
-            ViewBag.UserName = db.User.Where(d => d.Id == id).Select(s=>s.UserName).FirstOrDefault();
+            ViewBag.UserName = db.User.Where(d => d.Id == id).Select(s => s.UserName).FirstOrDefault();
             return View(Model);
         }
         public ActionResult Create(int? id)
@@ -66,13 +67,39 @@ namespace SRAD_MVC.Controllers
 
             return View(grade);
         }
+        public ActionResult View(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.Id = id;
+            ViewBag.UserName = db.User.Where(d => d.Id == id).Select(s => s.UserName).FirstOrDefault();
+            List<SelectListItem> courseList = new List<SelectListItem>();
+            foreach (var item in db.Course.ToList())
+            {
+                courseList.Add(new SelectListItem()
+                {
+                    Value = item.Name,
+                    Text = item.Name
+                });
+            }
+            ViewBag.courseList = courseList;
+            Grade grade = db.Grade.Where(d => d.Id == id).FirstOrDefault();
+
+            //prototype design pattern
+            var gradeViewModel = grade.GradeUpdateViewModel();
+
+            return View(gradeViewModel);
+        }
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
+
             ViewBag.Id = id;
             ViewBag.UserName = db.User.Where(d => d.Id == id).Select(s => s.UserName).FirstOrDefault();
             List<SelectListItem> courseList = new List<SelectListItem>();
@@ -128,7 +155,7 @@ namespace SRAD_MVC.Controllers
 
             db.Grade.Remove(grade);
             db.SaveChanges();
-            return RedirectToAction("Manage",new { Id = userId });
+            return RedirectToAction("Manage", new { Id = userId });
         }
 
         protected override void Dispose(bool disposing)
