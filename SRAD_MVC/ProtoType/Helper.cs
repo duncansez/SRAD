@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SRAD_MVC.ConstructionDesign;
 using SRAD_MVC.Models;
 using SRAD_MVC.ViewModels;
 using System;
@@ -10,7 +11,7 @@ namespace SRAD_MVC.ProtoType
 {
     public static class Helper
     {
-        public static GradeViewModel GradeUpdateViewModel(this Grade cDescription)
+        public static GradeViewModel GradeUpdateViewModel(this Grade grade)
         {
             Mapper.Reset();
             Mapper.Initialize(cfg =>
@@ -18,44 +19,11 @@ namespace SRAD_MVC.ProtoType
                 cfg.CreateMap<Grade, GradeViewModel>();
             });
 
-            var Model = Mapper.Map<Grade, GradeViewModel>(cDescription);
+            var Model = Mapper.Map<Grade, GradeViewModel>(grade);
 
+            //table based construction design
             //get grade and remark
-            if (Model.Score < 0)
-            {
-                Model.Grade = "F";
-                Model.Result = "Gagal";
-            }
-            else if (Model.Score > 0 && Model.Score < 30)
-            {
-                Model.Grade = "F";
-                Model.Result = "Gagal";
-            }
-            else if (Model.Score > 30 && Model.Score < 40)
-            {
-                Model.Grade = "E";
-                Model.Result = "Gagal";
-            }
-            else if (Model.Score > 40 && Model.Score < 50)
-            {
-                Model.Grade = "D";
-                Model.Result = "Lulus";
-            }
-            else if (Model.Score > 50 && Model.Score < 70)
-            {
-                Model.Grade = "C";
-                Model.Result = "Lulus";
-            }
-            else if (Model.Score > 70 && Model.Score < 90)
-            {
-                Model.Grade = "B";
-                Model.Result = "Lulus";
-            }
-            else if (Model.Score > 90 && Model.Score < 100)
-            {
-                Model.Grade = "A";
-                Model.Result = "Lulus";
-            }
+            Model = TableBased.ProcessGrade(Model);
 
 
             return Model;
