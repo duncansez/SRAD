@@ -30,7 +30,15 @@ namespace SRAD_MVC.Migrations
             {
                 context.Course.AddOrUpdate(x => x.Id,
                 new Course() { Name = "SCSJ3323 - REKABENTUK DAN SENIBINA PERISIAN", Section = "S4", CreditHours = 3 },
-                new Course() { Name = "SCSJ2363 - PENGURUSAN PROJEK PERISIAN", Section = "S3", CreditHours = 3 }
+                new Course() { Name = "SCSJ2363 - PENGURUSAN PROJEK PERISIAN", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSD1513 - TEKNOLOGI DAN SISTEM MAKLUMAT", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSD2523 - PANGKALAN DATA", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSD2613 - ANALISA DAN REKABENTUK SISTEM", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSD3761 - SEMINAR KEUSAHAWANAN TEKNOLOGI MAKLUMAT", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSI1013 - STRUKTUR DISKRIT", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSI1113 - MATEMATIK KOMPUTAN", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSI2143 - KEBARANGKALIAN DAN ANALISA DATA STATISTIK", Section = "S3", CreditHours = 3 },
+                new Course() { Name = "SCSJ3203 - TEORI SAINS KOMPUTER	", Section = "S3", CreditHours = 3 }
                 );
             }
         }

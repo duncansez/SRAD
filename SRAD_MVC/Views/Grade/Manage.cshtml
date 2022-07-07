@@ -17,6 +17,9 @@
             @Html.DisplayNameFor(model => model.Score)
         </th>
         <th>
+            Grade
+        </th>
+        <th>
             Action
         </th>
     </tr>
@@ -29,6 +32,38 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @{
+                    if (item.Score < 0)
+                    {
+                        <label>F</label>
+                    }
+                    else if (item.Score > 0 && item.Score < 30)
+                    {
+                        <label>F</label>
+                    }
+                    else if (item.Score > 30 && item.Score < 40)
+                    {
+                        <label>E</label>
+                    }
+                    else if (item.Score > 40 && item.Score < 50)
+                    {
+                        <label>D</label>
+                    }
+                    else if (item.Score > 50 && item.Score < 70)
+                    {
+                        <label>C</label>
+                    }
+                    else if (item.Score > 70 && item.Score < 90)
+                    {
+                        <label>B</label>
+                    }
+                    else if (item.Score > 90 && item.Score < 100)
+                    {
+                        <label>A</label>
+                    }
+                }
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
