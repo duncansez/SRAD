@@ -12,12 +12,17 @@ namespace SRAD_MVC.ConstructionDesign
         public static GradeViewModel ProcessGrade(GradeViewModel gradeViewModel)
         {
             var Model = gradeViewModel;
-            if (Model.Score < 0)
-            {
-                Model.Grade = "F";
-                Model.Result = "Gagal";
-            }
-            else if (Model.Score > 0 && Model.Score < 30)
+            //if (Model.Score < 0)
+            //{
+            //    Model.Grade = "F";
+            //    Model.Result = "Gagal";
+            //}
+            //else if (Model.Score > 0 && Model.Score < 30)
+            //{
+            //    Model.Grade = "F";
+            //    Model.Result = "Gagal";
+            //}
+            if (Model.Score < 30)
             {
                 Model.Grade = "F";
                 Model.Result = "Gagal";
@@ -42,7 +47,7 @@ namespace SRAD_MVC.ConstructionDesign
                 Model.Grade = "B";
                 Model.Result = "Lulus";
             }
-            else if (Model.Score > 90 && Model.Score < 100)
+            else if (Model.Score > 90)
             {
                 Model.Grade = "A";
                 Model.Result = "Lulus";
