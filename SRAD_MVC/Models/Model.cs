@@ -38,5 +38,11 @@ namespace SRAD_MVC.Models
         public string Course { get; set; }
         public string User { get; set; }
         public double Score { get; set; }
+        public bool isNotify { get; set; }
+    }
+    public class Log : BaseEntity
+    {
+        public Grade Grade { get; set; }
+        public string Message { get; set; }
     }
 }

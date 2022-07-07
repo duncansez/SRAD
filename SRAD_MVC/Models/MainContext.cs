@@ -31,6 +31,7 @@ namespace SRAD_MVC.Models
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Course> Course { get; set; }
         public virtual DbSet<Grade> Grade { get; set; }
+        public virtual DbSet<Log> Log { get; set; }
 
         public override int SaveChanges()
         {

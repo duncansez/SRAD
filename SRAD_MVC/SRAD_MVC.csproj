@@ -157,6 +157,14 @@
     <Compile Include="Migrations\202207061518168_Update database 06072022.Designer.cs">
       <DependentUpon>202207061518168_Update database 06072022.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207070816109_Add isNotify in grade model.cs" />
+    <Compile Include="Migrations\202207070816109_Add isNotify in grade model.Designer.cs">
+      <DependentUpon>202207070816109_Add isNotify in grade model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207070826019_+log.cs" />
+    <Compile Include="Migrations\202207070826019_+log.Designer.cs">
+      <DependentUpon>202207070826019_+log.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\MainContext.cs" />
@@ -245,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207061518168_Update database 06072022.resx">
       <DependentUpon>202207061518168_Update database 06072022.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207070816109_Add isNotify in grade model.resx">
+      <DependentUpon>202207070816109_Add isNotify in grade model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207070826019_+log.resx">
+      <DependentUpon>202207070826019_+log.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
