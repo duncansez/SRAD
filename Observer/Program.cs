@@ -29,6 +29,7 @@ namespace Observer
                 log.DateCreated = DateTime.Now;
                 log.UserCreated = "Observer";
 
+                //update grade state status to notified, so the observer engine will skip this record
                 item.isNotify = true;
 
                 db.Logs.Add(log);
