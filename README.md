@@ -10,8 +10,6 @@ We use MVC pattern for Grade. For more information please click [here](https://g
 
  1. Construction Design : [Link](https://github.com/duncansez/SRAD/tree/master/SRAD_MVC/ConstructionDesign)
 
-# Tutorial!
-
 # Required Software
  1. Visual Studio
  2. SQL Server
